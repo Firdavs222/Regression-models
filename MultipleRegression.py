@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar 27 21:32:21 2024
-
-@author: user
-"""
 
 import pandas as pd
 from sklearn import linear_model
@@ -22,11 +16,11 @@ regression.fit(X, y_true)
 predicted_co2 = regression.predict([[1100,980]])
 print(predicted_co2)
 
-#koeffitsiyent - og'irlik 1 kg oshsa qancha CO2 ko'payishi;
-#koefffitsiyent - hajm 1000 cm3 oshsa qancha CO2 ko'payishi;
+#coefficient which shows that if weight increases by 1 kg then how much CO2 increases;
+#coefficient which shows that if the volume of motor increases by 1 kg then how much CO2 increases;
 #print(regression.coef_)
 
-#regression model tuzamiz
+#creating regression model
 def MultiRegression(regression, x):
     X1 = regression.coef_[0]
     X2 = regression.coef_[1]
@@ -34,7 +28,7 @@ def MultiRegression(regression, x):
     return mregress
 y_predict = MultiRegression(regression, X)
 
-#determinatsiya koeffitsiyentini hisoblash;
+#evaluating R2 score;
 #print(regression.score(X,y_true))
 
 
